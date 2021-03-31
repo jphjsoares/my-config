@@ -3,6 +3,7 @@ set autoindent
 set hidden
 syntax enable
 source $HOME/.config/nvim/vim-plug/plugins.vim
+colorscheme dracula
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin

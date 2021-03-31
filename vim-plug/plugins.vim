@@ -16,5 +16,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jiangmiao/auto-pairs'
     " Code completion
     Plug 'neoclide/coc.nvim', {'branch': 'release'}    
-
+    " Dracula theme
+    Plug 'dracula/vim', { 'as': 'dracula' }    
 call plug#end()
