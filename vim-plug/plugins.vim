@@ -18,4 +18,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}    
     " Dracula theme
     Plug 'dracula/vim', { 'as': 'dracula' }    
+    " Nightfly theme
+    Plug 'bluz71/vim-nightfly-guicolors'
 call plug#end()
