@@ -7,17 +7,14 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
-    " Better Syntax Support
-    Plug 'sheerun/vim-polyglot'
     " File Explorer
     Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-    " Code completion
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}    
-    " Dracula theme
-    Plug 'dracula/vim', { 'as': 'dracula' }    
-    " Nightfly theme
-    Plug 'bluz71/vim-nightfly-guicolors'
+    " Syntastic for syntax checking
+    Plug 'scrooloose/syntastic'
+    Plug 'fcpg/vim-farout'
+    Plug 'sainnhe/gruvbox-material'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
