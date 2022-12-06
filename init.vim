@@ -11,11 +11,21 @@ syntax enable
 " Plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
-" Color scheme
-set termguicolors
-autocmd vimenter * ++nested colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
+" Important!!
+if has('termguicolors')
+  set termguicolors
+endif
 
+" For dark version.
+set background=dark
+
+" Set contrast.
+" This configuration option should be placed before `colorscheme gruvbox-material`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:gruvbox_material_background = 'soft'
+" For better performance
+let g:gruvbox_material_better_performance = 1
+colorscheme gruvbox-material
 
 " TLDR
 " SHIFT+j/k -> move lines up or down
@@ -37,7 +47,6 @@ vnoremap <S-k> :m '<-2<CR>gv=gv
 " other plugin before putting this into your config.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 
 
 " GoTo code navigation.
