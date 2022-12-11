@@ -8,6 +8,7 @@ call vundle#begin('~/.vim/bundle/')
 	Plugin 'sainnhe/everforest'
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'ycm-core/YouCompleteMe'
+	Bundle 'octol/vim-cpp-enhanced-highlight'
 	Plugin 'preservim/nerdtree'
 	Plugin 'SirVer/ultisnips'
 	Plugin 'honza/vim-snippets'
