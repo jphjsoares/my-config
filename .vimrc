@@ -1,16 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin('~/.vim/bundle/')
-	Plugin 'sainnhe/everforest'
+    Plugin 'EdenEast/nightfox.nvim' " Vim-Plug
 	Plugin 'VundleVim/Vundle.vim'
 	Plugin 'ycm-core/YouCompleteMe'
-	Bundle 'octol/vim-cpp-enhanced-highlight'
 	Plugin 'preservim/nerdtree'
 	Plugin 'SirVer/ultisnips'
+    Bundle 'octol/vim-cpp-enhanced-highlight'
 	Plugin 'honza/vim-snippets'
 call vundle#end()            " required
 
@@ -26,23 +25,24 @@ let g:UltiSnipsJumpBackwardTrigger="<S-b>"
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
+" type \fw to find symbol in workspace or \fd in document
+nmap <leader>fw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>fd <Plug>(YCMFindSymbolInDocument)
 
 " Colorscheme
 if has('termguicolors')
     set termguicolors
 endif
 set background=dark
-let g:everforest_background='hard'
-let g:everforest_better_performance=1
-colorscheme everforest
+colorscheme carbonfox
 
 " #############################
 " Vim related settings
 " #############################
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
+inoremap { {<Cr><Cr>}<Up>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
 inoremap ' ''<Esc>ha
 inoremap ` ``<Esc>ha
 
