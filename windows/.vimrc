@@ -63,8 +63,3 @@ set linebreak
 if has("syntax")
 	syntax enable
 endif
-
-" When setting up a mac system make sure of this
-if $PLATFORM == 'mac'
-	set backspace=indent,eol,start
-endif
