@@ -1,17 +1,27 @@
 set nocompatible              " be iMproved, required
+set guifont=Fira_Code:h12
+set backspace=indent,eol,start
+set belloff=all
+
+" change gvim look
+set guioptions -=m
+set guioptions -=T
+
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/Vundle.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-call vundle#begin('~/.vim/bundle/')
-    Plugin 'EdenEast/nightfox.nvim' " Vim-Plug
-	Plugin 'VundleVim/Vundle.vim'
-	Plugin 'ycm-core/YouCompleteMe'
-	Plugin 'preservim/nerdtree'
-	Plugin 'SirVer/ultisnips'
-    Bundle 'octol/vim-cpp-enhanced-highlight'
-	Plugin 'honza/vim-snippets'
-call vundle#end()            " required
+call plug#begin('~/vimfiles/plugged/')
+    Plug 'EdenEast/nightfox.nvim' " Vim-Plug
+	Plug 'VundleVim/Vundle.vim'
+	Plug 'preservim/nerdtree'
+	Plug 'SirVer/ultisnips'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+	Plug 'honza/vim-snippets'
+    Plug 'morhetz/gruvbox'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
+call plug#end()
 
 filetype plugin indent on    " required
 
@@ -22,19 +32,12 @@ let g:UltiSnipsExpandTrigger="<S-t>"
 let g:UltiSnipsJumpForwardTrigger="<S-f>"
 let g:UltiSnipsJumpBackwardTrigger="<S-b>"
 
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
-" type \fw to find symbol in workspace or \fd in document
-nmap <leader>fw <Plug>(YCMFindSymbolInWorkspace)
-nmap <leader>fd <Plug>(YCMFindSymbolInDocument)
-
 " Colorscheme
 if has('termguicolors')
     set termguicolors
 endif
 set background=dark
-colorscheme carbonfox
+colorscheme gruvbox
 
 " #############################
 " Vim related settings
